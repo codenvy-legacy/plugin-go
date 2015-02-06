@@ -18,7 +18,7 @@ import com.codenvy.ide.api.projecttype.wizard.ProjectTypeWizardRegistry;
 import com.codenvy.ide.api.projecttype.wizard.ProjectWizard;
 import com.codenvy.ide.ext.go.client.wizard.GoPagePresenter;
 import com.codenvy.ide.ext.go.shared.ProjectAttributes;
-import com.codenvy.ide.extension.runner.client.wizard.SelectRunnerPagePresenter;
+import com.codenvy.ide.ext.runner.client.wizard.SelectRunnerPagePresenter;
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
@@ -37,8 +37,8 @@ public class GoExtension {
 
     @Inject
     public GoExtension(Provider<GoPagePresenter> goPagePresenterProvider, Provider<SelectRunnerPagePresenter> runnerPagePresenter,
-                        NotificationManager notificationManager, ProjectTypeWizardRegistry projectTypeWizardRegistry,
-                        ParserResource parserResource, IconRegistry iconRegistry) {
+                       NotificationManager notificationManager, ProjectTypeWizardRegistry projectTypeWizardRegistry,
+                       ParserResource parserResource, IconRegistry iconRegistry) {
         ProjectWizard wizard = new ProjectWizard(notificationManager);
         wizard.addPage(goPagePresenterProvider);
         wizard.addPage(runnerPagePresenter);
