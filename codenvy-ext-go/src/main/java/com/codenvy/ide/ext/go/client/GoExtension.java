@@ -36,9 +36,12 @@ public class GoExtension {
     }
 
     @Inject
-    public GoExtension(Provider<GoPagePresenter> goPagePresenterProvider, Provider<SelectRunnerPagePresenter> runnerPagePresenter,
-                       NotificationManager notificationManager, ProjectTypeWizardRegistry projectTypeWizardRegistry,
-                       ParserResource parserResource, IconRegistry iconRegistry) {
+    public GoExtension(Provider<GoPagePresenter> goPagePresenterProvider,
+                       Provider<SelectRunnerPagePresenter> runnerPagePresenter,
+                       NotificationManager notificationManager,
+                       ProjectTypeWizardRegistry projectTypeWizardRegistry,
+                       ParserResource parserResource,
+                       IconRegistry iconRegistry) {
         ProjectWizard wizard = new ProjectWizard(notificationManager);
         wizard.addPage(goPagePresenterProvider);
         wizard.addPage(runnerPagePresenter);
