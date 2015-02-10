@@ -8,12 +8,19 @@
  * Contributors:
  *   Codenvy, S.A. - initial API and implementation
  *******************************************************************************/
-package com.codenvy.ide.ext.go.shared;
+package com.codenvy.ide.ext.go.server.project.type;
 
-/** @author Vladyslav Zhukovskii */
-public interface ProjectAttributes {
-    String GO_ID                = "go";
-    String GO_NAME              = "Go Project";
-    String GO_CATEGORY          = "Go";
-    String PROGRAMMING_LANGUAGE = "go";
+import com.codenvy.api.project.server.type.ProjectType;
+import com.codenvy.api.project.shared.Constants;
+import com.codenvy.ide.ext.go.shared.ProjectAttributes;
+
+/**
+ * @author Vitaly Parfonov
+ */
+public class GoProjectType extends ProjectType {
+
+    public GoProjectType() {
+        super(ProjectAttributes.GO_ID, ProjectAttributes.GO_NAME, true, false);
+        addConstantDefinition(Constants.LANGUAGE, "language", ProjectAttributes.PROGRAMMING_LANGUAGE);
+    }
 }
