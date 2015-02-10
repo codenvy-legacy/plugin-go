@@ -13,15 +13,9 @@ package com.codenvy.ide.ext.go.client;
 import com.codenvy.ide.api.extension.Extension;
 import com.codenvy.ide.api.icon.Icon;
 import com.codenvy.ide.api.icon.IconRegistry;
-import com.codenvy.ide.api.notification.NotificationManager;
-import com.codenvy.ide.api.projecttype.wizard.ProjectTypeWizardRegistry;
-import com.codenvy.ide.api.projecttype.wizard.ProjectWizard;
-import com.codenvy.ide.ext.go.client.wizard.GoPagePresenter;
 import com.codenvy.ide.ext.go.shared.ProjectAttributes;
-import com.codenvy.ide.extension.runner.client.wizard.SelectRunnerPagePresenter;
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.inject.Inject;
-import com.google.inject.Provider;
 import com.google.inject.Singleton;
 
 import org.vectomatic.dom.svg.ui.SVGResource;
@@ -30,21 +24,13 @@ import org.vectomatic.dom.svg.ui.SVGResource;
 @Singleton
 @Extension(title = "Go", version = "3.0.0")
 public class GoExtension {
+    @Inject
+    public GoExtension(ParserResource parserResource, IconRegistry iconRegistry) {
+        iconRegistry.registerIcon(new Icon(ProjectAttributes.GO_CATEGORY + ".samples.category.icon", parserResource.goCategoryIcon()));
+    }
+
     public interface ParserResource extends ClientBundle {
         @Source("com/codenvy/ide/ext/go/client/image/go.svg")
         SVGResource goCategoryIcon();
-    }
-
-    @Inject
-    public GoExtension(Provider<GoPagePresenter> goPagePresenterProvider, Provider<SelectRunnerPagePresenter> runnerPagePresenter,
-                        NotificationManager notificationManager, ProjectTypeWizardRegistry projectTypeWizardRegistry,
-                        ParserResource parserResource, IconRegistry iconRegistry) {
-        ProjectWizard wizard = new ProjectWizard(notificationManager);
-        wizard.addPage(goPagePresenterProvider);
-        wizard.addPage(runnerPagePresenter);
-
-        projectTypeWizardRegistry.addWizard("go", wizard);
-
-        iconRegistry.registerIcon(new Icon(ProjectAttributes.GO_CATEGORY + ".samples.category.icon", parserResource.goCategoryIcon()));
     }
 }
