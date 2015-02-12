@@ -10,10 +10,11 @@
  *******************************************************************************/
 package com.codenvy.ide.ext.go.server.inject;
 
-import com.codenvy.ide.ext.go.server.project.type.GoProjectTypeDescriptionExtension;
-import com.codenvy.ide.ext.go.server.project.type.GoProjectTypeExtension;
+import com.codenvy.api.project.server.type.ProjectType;
+import com.codenvy.ide.ext.go.server.project.type.GoProjectType;
 import com.codenvy.inject.DynaModule;
 import com.google.inject.AbstractModule;
+import com.google.inject.multibindings.Multibinder;
 
 /** @author Vladyslav Zhukovskii */
 @DynaModule
@@ -21,7 +22,7 @@ public class GoModule extends AbstractModule {
     /** {@inheritDoc} */
     @Override
     protected void configure() {
-        bind(GoProjectTypeExtension.class);
-        bind(GoProjectTypeDescriptionExtension.class);
+        Multibinder<ProjectType> projectTypeMultibinder = Multibinder.newSetBinder(binder(), ProjectType.class);
+        projectTypeMultibinder.addBinding().to(GoProjectType.class);
     }
 }

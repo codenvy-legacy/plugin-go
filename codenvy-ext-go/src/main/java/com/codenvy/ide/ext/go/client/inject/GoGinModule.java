@@ -11,10 +11,10 @@
 package com.codenvy.ide.ext.go.client.inject;
 
 import com.codenvy.ide.api.extension.ExtensionGinModule;
-import com.codenvy.ide.ext.go.client.wizard.GoPageView;
-import com.codenvy.ide.ext.go.client.wizard.GoPageViewImpl;
+import com.codenvy.ide.api.projecttype.wizard.ProjectWizardRegistrar;
+import com.codenvy.ide.ext.go.client.wizard.GoProjectWizardRegistrar;
 import com.google.gwt.inject.client.AbstractGinModule;
-import com.google.inject.Singleton;
+import com.google.gwt.inject.client.multibindings.GinMultibinder;
 
 /** @author Vladyslav Zhukovskii */
 @ExtensionGinModule
@@ -22,6 +22,6 @@ public class GoGinModule extends AbstractGinModule {
     /** {@inheritDoc} */
     @Override
     protected void configure() {
-        bind(GoPageView.class).to(GoPageViewImpl.class).in(Singleton.class);
+        GinMultibinder.newSetBinder(binder(), ProjectWizardRegistrar.class).addBinding().to(GoProjectWizardRegistrar.class);
     }
 }

@@ -8,14 +8,19 @@
  * Contributors:
  *   Codenvy, S.A. - initial API and implementation
  *******************************************************************************/
-package com.codenvy.ide.ext.go.client.wizard;
+package com.codenvy.ide.ext.go.server.project.type;
 
-import com.codenvy.ide.api.mvp.View;
-import com.google.inject.ImplementedBy;
+import com.codenvy.api.project.server.type.ProjectType;
+import com.codenvy.api.project.shared.Constants;
+import com.codenvy.ide.ext.go.shared.ProjectAttributes;
 
-/** @author Vladyslav Zhukovskii */
-@ImplementedBy(GoPageViewImpl.class)
-public interface GoPageView extends View<GoPageView.ActionDelegate> {
-    public interface ActionDelegate {
+/**
+ * @author Vitaly Parfonov
+ */
+public class GoProjectType extends ProjectType {
+
+    public GoProjectType() {
+        super(ProjectAttributes.GO_ID, ProjectAttributes.GO_NAME, true, false);
+        addConstantDefinition(Constants.LANGUAGE, "language", ProjectAttributes.PROGRAMMING_LANGUAGE);
     }
 }

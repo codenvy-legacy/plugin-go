@@ -12,7 +12,8 @@ package com.codenvy.ide.ext.go.shared;
 
 /** @author Vladyslav Zhukovskii */
 public interface ProjectAttributes {
-    String GO_ID             = "go";
-    String GO_NAME           = "Go Project";
-    String GO_CATEGORY       = "Go";
+    String GO_ID                = "go";
+    String GO_NAME              = "Go Project";
+    String GO_CATEGORY          = "Go";
+    String PROGRAMMING_LANGUAGE = "go";
 }
