@@ -14,13 +14,19 @@ import com.codenvy.api.project.server.type.ProjectType;
 import com.codenvy.api.project.shared.Constants;
 import com.codenvy.ide.ext.go.shared.ProjectAttributes;
 
+import java.util.Arrays;
+
+import static com.codenvy.ide.api.projecttype.RunnerCategory.GO;
+
 /**
  * @author Vitaly Parfonov
+ * @author Dmitry Shnurenko
  */
 public class GoProjectType extends ProjectType {
 
     public GoProjectType() {
         super(ProjectAttributes.GO_ID, ProjectAttributes.GO_NAME, true, false);
         addConstantDefinition(Constants.LANGUAGE, "language", ProjectAttributes.PROGRAMMING_LANGUAGE);
+        addRunnerCategories(Arrays.asList(GO.toString()));
     }
 }
