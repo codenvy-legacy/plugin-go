@@ -8,20 +8,20 @@
  * Contributors:
  *   Codenvy, S.A. - initial API and implementation
  *******************************************************************************/
-package com.codenvy.ide.ext.go.client.wizard;
+package org.eclipse.che.ide.ext.go.client.wizard;
 
-import com.codenvy.api.project.shared.dto.ImportProject;
-import com.codenvy.ide.api.projecttype.wizard.ProjectWizardRegistrar;
-import com.codenvy.ide.api.wizard.WizardPage;
-import com.codenvy.ide.collections.Array;
-import com.codenvy.ide.collections.Collections;
+import org.eclipse.che.api.project.shared.dto.ImportProject;
+import org.eclipse.che.ide.api.project.type.wizard.ProjectWizardRegistrar;
+import org.eclipse.che.ide.api.wizard.WizardPage;
+import org.eclipse.che.ide.collections.Array;
+import org.eclipse.che.ide.collections.Collections;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 
 import javax.annotation.Nonnull;
 
-import static com.codenvy.ide.ext.go.shared.ProjectAttributes.GO_CATEGORY;
-import static com.codenvy.ide.ext.go.shared.ProjectAttributes.GO_ID;
+import static org.eclipse.che.ide.ext.go.shared.ProjectAttributes.GO_CATEGORY;
+import static org.eclipse.che.ide.ext.go.shared.ProjectAttributes.GO_ID;
 
 /**
  * Provides information for registering Go project type into project wizard.

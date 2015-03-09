@@ -8,11 +8,11 @@
  * Contributors:
  *   Codenvy, S.A. - initial API and implementation
  *******************************************************************************/
-package com.codenvy.ide.ext.go.client.inject;
+package org.eclipse.che.ide.ext.go.client.inject;
 
-import com.codenvy.ide.api.extension.ExtensionGinModule;
-import com.codenvy.ide.api.projecttype.wizard.ProjectWizardRegistrar;
-import com.codenvy.ide.ext.go.client.wizard.GoProjectWizardRegistrar;
+import org.eclipse.che.ide.api.extension.ExtensionGinModule;
+import org.eclipse.che.ide.api.project.type.wizard.ProjectWizardRegistrar;
+import org.eclipse.che.ide.ext.go.client.wizard.GoProjectWizardRegistrar;
 import com.google.gwt.inject.client.AbstractGinModule;
 import com.google.gwt.inject.client.multibindings.GinMultibinder;
 

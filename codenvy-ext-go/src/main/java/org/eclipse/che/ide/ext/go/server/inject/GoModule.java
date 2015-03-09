@@ -8,11 +8,11 @@
  * Contributors:
  *   Codenvy, S.A. - initial API and implementation
  *******************************************************************************/
-package com.codenvy.ide.ext.go.server.inject;
+package org.eclipse.che.ide.ext.go.server.inject;
 
-import com.codenvy.api.project.server.type.ProjectType;
-import com.codenvy.ide.ext.go.server.project.type.GoProjectType;
-import com.codenvy.inject.DynaModule;
+import org.eclipse.che.api.project.server.type.ProjectType;
+import org.eclipse.che.ide.ext.go.server.project.type.GoProjectType;
+import org.eclipse.che.inject.DynaModule;
 import com.google.inject.AbstractModule;
 import com.google.inject.multibindings.Multibinder;
 
